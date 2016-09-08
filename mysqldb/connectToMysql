@@ -1,12 +1,15 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 class Solution(object):
-    def Connect(self):
-        
-        """
-        # encoding: utf-8
+    def connectMysql(self):
         import MySQLdb
         # 打开数据库连接
+        """
+        地址:10.141.208.45
+        用户名:root
+        密码:hadoop
+        数据库:bridge
+        """
         db = MySQLdb.connect("10.141.208.45","root","hadoop","bridge")
         # 使用cursor()方法获取操作游标
         cursor = db.cursor()
@@ -28,4 +31,4 @@ class Solution(object):
 
 if __name__=="__main__":
     c=Solution()
-    b=c.wordBreak()
+    b=c.connectMysql()
