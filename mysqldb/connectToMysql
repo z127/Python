@@ -1,0 +1,37 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+class Solution(object):
+    def wordBreak(self):
+        """
+        :type s: str
+        :type wordDict: Set[str]
+        :rtype: bool
+        dp为标记，长度为len(s),如果前n个字符在字典中则 dp[n]=True. s[i:k]截取第i+1位到第k位的字符。
+        如果dp[len(s)]为true，则代表所有字符都匹配成功.
+        #!/usr/bin/python
+        """
+        # encoding: utf-8
+        import MySQLdb
+        # 打开数据库连接
+        db = MySQLdb.connect("10.141.208.45","root","hadoop","bridge")
+        # 使用cursor()方法获取操作游标
+        cursor = db.cursor()
+        # 使用execute方法执行SQL语句
+        sql="SELECT code , frequence from channel_pra where nodetype = 1"
+        sql2="SELECT count(*) as code from channel_pra where nodetype = 1"
+        cursor.execute(sql)
+        data1 = cursor.fetchall()
+        cursor.execute(sql2)
+        # 使用 fetchone() 方法获取一条数据库。
+        data = cursor.fetchall()
+        print "len:%s "%(len(data1))
+        print data1
+        # 关闭数据库连接
+        cursor.close()
+        db.close()
+
+
+
+if __name__=="__main__":
+    c=Solution()
+    b=c.wordBreak()
