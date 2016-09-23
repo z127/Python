@@ -1,6 +1,6 @@
  #创建excel并插入数据
  from xlwt import *
- w=Workbook(encoding = 'ascii')
+        w=Workbook(encoding = 'ascii')
         ws=w.add_sheet('xlwt',cell_overwrite_ok=True)
         ws.write(0, 0, "name") 
         ws.write(0,1,"frequency")
